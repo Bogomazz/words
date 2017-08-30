@@ -1,0 +1,36 @@
+body {
+    font-size: 18px;
+}
+
+.auth-back{
+    background-color: #f3f3f3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-back input {
+    width: 300px;
+    height: 2rem;
+    line-height: 1.5rem;
+    margin: .5rem;
+    font-size: 18px;
+    border-radius: .2rem;
+    border: none;
+}
+
+.auth-back button {
+    width: 120px;
+    height: 2rem;
+    margin: .5rem;
+    font-size: 18px;
+    border-radius: .2rem;
+    border: none;
+
+}
