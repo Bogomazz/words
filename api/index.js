@@ -10,7 +10,7 @@ const Config                    = use('config');
 // Server.addComponent(use('components/permissions'));
 
 Server.addComponent(use('components/cors'));
-Server.addComponent(use('components/accounts'));
-Server.addComponent(use('components/sessions'));
+Server.addComponent(require('./components/accounts'));
+Server.addComponent(require('./components/sessions'));
 
 Server.start(Config);
