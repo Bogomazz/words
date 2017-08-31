@@ -12,5 +12,6 @@ const Config                    = use('config');
 Server.addComponent(use('components/cors'));
 Server.addComponent(require('./components/accounts'));
 Server.addComponent(require('./components/sessions'));
+Server.addComponent(require('./components/auth'));
 
 Server.start(Config);

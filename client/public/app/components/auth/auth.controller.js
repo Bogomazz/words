@@ -2,13 +2,20 @@ app.controller("AuthController", function($scope, $http) {
     let REGISTER_URL = config.apiBase + 'register';
     let LOGIN_URL = config.apiBase + 'login';
 
+    let login = () => {
+        $http.post(LOGIN_URL, JSON.stringify($scope.userData))
+            .success(data => {
+
+            });
+    };
+
     $scope.userData = {
         login: '',
         password: ''
     };
 
     $scope.login = () => {
-        $http.post(LOGIN_URL, JSON.stringify($scope.userData), {headers: queryHeaders})
+        $http.post(LOGIN_URL, JSON.stringify($scope.userData))
             .then(data => {
                 console.log(data);
             });
@@ -16,8 +23,8 @@ app.controller("AuthController", function($scope, $http) {
 
     $scope.register = () => {
         $http.post(REGISTER_URL, $scope.userData)
-            .success(data => {
-                console.log(data);
+            .success( () => {
+                login();
             })
             .error(err => {
 

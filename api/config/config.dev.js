@@ -13,7 +13,7 @@ module.exports = {
         host: 'localhost',
         user: 'root',
         password: 'root',
-        database: 'dominion'
+        database: 'words'
     },
 
     cors: {

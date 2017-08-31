@@ -12,8 +12,7 @@ const AccountsDefinition = {
 
     properties: {
         id: Property.id(),
-        phone_number: Property.number().min(10000000000).max(999999999999),
-        email: Property.string().max(50),
+        login: Property.string(),
         password_hash: Property.string().max(255).private(),
         password_salt: Property.string().max(255).private(),
         info: Property.object(),
@@ -25,7 +24,7 @@ const AccountsDefinition = {
     instance: {
 
         checkPassword: function(password){
-            return this.password_hash == Tools.generatePassword(password, this.password_salt) ? true:false;
+            return this.password_hash === Tools.generatePassword(password, this.password_salt);
         },
 
         createPasswordHash: function (password){

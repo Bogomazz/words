@@ -14,13 +14,7 @@ function requestInterceptorAuthentication() {
         }
 
         SessionsFactory.get({token: token}).then(session => {
-            if (!session.isActive()){
-                resolve();
-                return;
-            }
 
-            session.refresh(this.request);
-            
             AccountsFactory.get({id: session.accounts_id})
                 .then(account => {
                         this.request.session = {
@@ -32,12 +26,7 @@ function requestInterceptorAuthentication() {
                 .catch(e => e instanceof Errors.NotFound? resolve() : reject(e));
         })
         .catch(e => {
-            if(e instanceof Errors.NotFound){
-                //ToDo: Create new session
-                resolve(e);
-            }else{
-                reject(e);
-            }
+            reject(e);
         });
     });
 }

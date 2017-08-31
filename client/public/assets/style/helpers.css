@@ -150,10 +150,13 @@
 }
 
 .blue {
-    background-color: #5075ff;
+    /*background-color: rgb(69, 97, 145);*/
+    background-color: #2a5885;
+    color: white;
 }
 .green {
-    background-color: #2bff15;
+    background-color: #17850f;
+    color: white;
 }
 .red {
     background-color: #ff212b;

@@ -3,7 +3,7 @@ body {
 }
 
 .auth-back{
-    background-color: #f3f3f3;
+    background-color: rgb(245,234, 216);
     position: absolute;
     top: 0;
     left: 0;
@@ -23,6 +23,7 @@ body {
     font-size: 18px;
     border-radius: .2rem;
     border: none;
+    padding: .2em;
 }
 
 .auth-back button {
