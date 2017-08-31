@@ -6,5 +6,4 @@ var app = angular.module('app', ["ngRoute"])
                 controller:'AuthController'
             });
 
-        $routeProvider.otherwise({redirectTo: '/auth'});
     });

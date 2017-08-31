@@ -1,4 +1,4 @@
-app.controller("AuthController", function($scope, $http) {
+app.controller("AuthController", function($scope, $http, $location) {
     let REGISTER_URL = config.apiBase + 'register';
     let LOGIN_URL = config.apiBase + 'login';
 
@@ -17,7 +17,7 @@ app.controller("AuthController", function($scope, $http) {
     $scope.login = () => {
         $http.post(LOGIN_URL, JSON.stringify($scope.userData))
             .then(data => {
-                console.log(data);
+                $location.path('/');
             });
     };
 
