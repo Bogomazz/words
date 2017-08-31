@@ -1,4 +1,4 @@
-var app = angular.module('app', ["ngRoute"])
+let app = angular.module('app', ["ngRoute"])
     .config(function($routeProvider){
         $routeProvider.when('/auth',
             {
