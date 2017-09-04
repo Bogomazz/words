@@ -14,6 +14,16 @@ const AccountsController = {
         // accounts/23
         function (accountsId) {
             return AccountsFactory.get({id: accountsId});
+        },
+
+        function (){
+            // @path: accounts/me
+
+            if (this.request.session && this.request.session.token) {
+                return this.request.session.account;
+            } else {
+                throw new Errors.Unauthorized();
+            }
         }
     ],
 

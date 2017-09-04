@@ -16,7 +16,8 @@ app.controller("AuthController", function($scope, $http, $location) {
 
     $scope.login = () => {
         $http.post(LOGIN_URL, JSON.stringify($scope.userData))
-            .then(data => {
+            .then(resp => {
+                localStorage =
                 $location.path('/');
             });
     };
