@@ -5,5 +5,9 @@ let app = angular.module('app', ["ngRoute"])
                 templateUrl:'/app/components/auth/auth.view.html',
                 controller:'AuthController'
             });
-
+        $routeProvider.when('/',
+            {
+                templateUrl: '/app/components/dashboard/dashboard.view.html',
+                controller: 'DashboardController'
+            })
     });

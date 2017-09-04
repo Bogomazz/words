@@ -1,8 +1,9 @@
 body {
-  font-size: 18px; }
+  font-size: 18px;
+}
 
-.auth-back {
-  background-color: #f5ead8;
+.auth-back{
+  background-color: rgb(245,234, 216);
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +12,8 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .auth-back input {
   width: 300px;
@@ -21,7 +23,8 @@ body {
   font-size: 18px;
   border-radius: .2rem;
   border: none;
-  padding: .2em; }
+  padding: .2em;
+}
 
 .auth-back button {
   width: 120px;
@@ -29,6 +32,6 @@ body {
   margin: .5rem;
   font-size: 18px;
   border-radius: .2rem;
-  border: none; }
+  border: none;
 
-/*# sourceMappingURL=index.css.map */
+}
