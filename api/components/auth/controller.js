@@ -24,7 +24,10 @@ const AuthController = {
                         throw new Errors.Unauthorized();
                     }
                 })
-                .then(account => SessionsFactory.create(account));
+                .then(account => {
+                    SessionsFactory.create(account)
+                        .then(session => ({account, session}))
+                });
         }
     ],
 };

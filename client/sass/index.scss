@@ -33,4 +33,44 @@ body {
   }
 }
 
+.error-messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 300px;
+  .error-message {
+    position: relative;
+    margin: .2em 0;
+    width: 300px;
+    border-radius: .2em;
+    background-color: rgba(255, 0, 0, 0.64);
+    padding: .2em 0;
+    opacity: 0.6;
+    &:hover{
+      opacity: 1;
+      cursor: pointer;
+      .cancel {
+        visibility: visible;
+      }
+    }
+    .cancel {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 5px;
+      margin: 0;
+      visibility: hidden;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    div {
+      margin: 0 1em;
+    }
+  }
+}
 

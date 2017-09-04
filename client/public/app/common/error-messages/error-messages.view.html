@@ -1,5 +1,13 @@
-<div class="error-messages-container">
+<div class="error-messages-container" ng-controller="ErrorMessagesController">
     <div ng-repeat="message in messages" class="error-message">
-
+        <div class="cancel" ng-click="remove(message)">
+            &#xd7;
+        </div>
+        <div>
+            <b>{{message.title}}</b>
+        </div>
+        <div>
+            {{message.description}}
+        </div>
     </div>
 </div>

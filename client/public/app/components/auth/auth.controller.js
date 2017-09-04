@@ -1,4 +1,4 @@
-app.controller("AuthController", function($scope, $http, $location) {
+app.controller("AuthController", function($scope, $http, $location, $auth) {
     let REGISTER_URL = config.apiBase + 'register';
     let LOGIN_URL = config.apiBase + 'login';
 
@@ -17,7 +17,7 @@ app.controller("AuthController", function($scope, $http, $location) {
     $scope.login = () => {
         $http.post(LOGIN_URL, JSON.stringify($scope.userData))
             .then(resp => {
-                localStorage =
+                $auth.setAccount(resp.data.account);
                 $location.path('/');
             });
     };
