@@ -25,7 +25,8 @@ const AuthController = {
                     }
                 })
                 .then(account => {
-                    SessionsFactory.create(account)
+                    return SessionsFactory.create(account)
+                        .then(session => session.save())
                         .then(session => ({account, session}))
                 });
         }

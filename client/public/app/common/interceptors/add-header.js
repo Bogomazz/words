@@ -1,13 +1,11 @@
 app.factory('httpRequestInterceptor', function () {
     return {
-        request: function (config) {
+        request: function (requestConfig) {
 
-            if (localStorage.token){
-                config.headers['Access-Token'] = localStorage.token;
-            }
-            config.headers['Content-Type'] = 'application/json';
+            requestConfig.headers['Access-Token'] = localStorage.getItem(config.storageTokenKey);
+            requestConfig.headers['Content-Type'] = 'application/json';
 
-            return config;
+            return requestConfig;
         }
     };
 });

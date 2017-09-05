@@ -1,12 +1,34 @@
-app.factory('$auth', function() {
+app.factory('auth', ['$http', function($http) {
+    let MY_ACCOUNT_URL = config.apiBase + 'accounts/me';
+
     let instance = {};
-    let authAccount;
+    let account;
 
-    instance.setAccount = (account) => authAccount = account;
+    instance.setAccount = (newAccount) => {
+        console.log(newAccount);
+        account = newAccount;
+    };
 
-    instance.getAccount = () => authAccount;
+    instance.getAccount = () => {
+        if (account) {
+            return Promise.resolve(account);
+        } else if (!localStorage.getItem(config.storageTokenKey)) {
+            return Promise.reject();
+        } else {
+            return $http.get(MY_ACCOUNT_URL)
+                .then(resp => {
+                    return Promise.resolve(resp.data);
+                }, err => {
+                    return Promise.reject(err);
+                })
+        }
+    };
 
-    instance.isAuthorized = () => !!authAccount;
+    instance.setToken = (token) => {
+        localStorage.setItem(config.storageTokenKey, token);
+    };
+
+    instance.isAuthorized = () => !!account;
 
     return instance;
-});
+}]);

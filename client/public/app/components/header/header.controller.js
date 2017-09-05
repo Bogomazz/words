@@ -1,10 +1,16 @@
-app.controller('HeaderController', function HeaderController($scope, $http, $auth) {
-    const CURRENT_USER_URL = config.apiBase + 'accounts/me';
+app.controller('HeaderController',['$scope', '$http', '$location', 'auth',
+    function HeaderController($scope, $http, $location, auth) {
+        $scope.init = () => {
+            auth.getAccount()
+                .then(account => {
+                    auth.setAccount(account);
+                    $scope.login = account.login;
+                })
+                .catch(error => $location.path('/auth'));
+        };
 
-    $scope.login = 'ragnar';
-
-}).directive('header', function () {
-    return {
-        templateUrl: '/app/components/header/header.view.html'
-    }
+    }]).directive('header', function () {
+        return {
+            templateUrl: '/app/components/header/header.view.html'
+        }
 });
