@@ -1,9 +1,17 @@
+$beige: rgb(245,234, 216);
+$blue: #2a5885;
+$light-blue: rgb(64, 105, 172);
+$green: #17850f;
+$red: #ff212b;
+
 body {
   font-size: 18px;
+  background-color: $beige;
+  margin: 0;
 }
 
 .auth-back{
-  background-color: rgb(245,234, 216);
+  background-color: $beige;
   position: absolute;
   top: 0;
   left: 0;
@@ -72,5 +80,21 @@ body {
       margin: 0 1em;
     }
   }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $blue;
+  color: white;
+  div {
+    padding: .5em 2em;
+    border-radius: .2em;
+    &:hover {
+      background-color: $light-blue;
+      cursor: pointer;
+    }
+  }
+
 }
 

@@ -1,5 +1,7 @@
 body {
-  font-size: 18px; }
+  font-size: 18px;
+  background-color: #f5ead8;
+  margin: 0; }
 
 .auth-back {
   background-color: #f5ead8;
@@ -62,5 +64,17 @@ body {
         text-decoration: underline; }
     .error-messages-container .error-message div {
       margin: 0 1em; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2a5885;
+  color: white; }
+  .header div {
+    padding: .5em 2em;
+    border-radius: .2em; }
+    .header div:hover {
+      background-color: #4069ac;
+      cursor: pointer; }
 
 /*# sourceMappingURL=index.css.map */

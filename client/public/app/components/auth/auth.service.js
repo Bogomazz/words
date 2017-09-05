@@ -5,7 +5,6 @@ app.factory('auth', ['$http', function($http) {
     let account;
 
     instance.setAccount = (newAccount) => {
-        console.log(newAccount);
         account = newAccount;
     };
 
