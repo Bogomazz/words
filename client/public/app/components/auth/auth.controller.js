@@ -19,6 +19,13 @@ app.controller("AuthController", function($scope, $http, $location, $auth) {
             .then(resp => {
                 $auth.setAccount(resp.data.account);
                 $location.path('/');
+            },
+            err => {
+                console.error(err);
+                $scope.$broadcast('error', {
+                    title: 'Auth error',
+                    description: 'Login or password is incorrect.'
+                });
             });
     };
 
